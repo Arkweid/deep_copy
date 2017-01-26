@@ -1,0 +1,2 @@
+It is lesson 1 speech
+#Course.first.materials.create(description: "Speech lecture 1", file: File.new('/home/arkweid/RailsProjects/deep_test/public/lesson1.txt', 'r'))

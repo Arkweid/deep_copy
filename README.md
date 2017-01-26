@@ -1,5 +1,13 @@
-Запуск сервисной функции копирования:
-CourseCopyService.new(1)
+```ruby
+rails db:seed
+```
 
-Запуск сервисной функции в фоне:
+## Запуск сервисной функции копирования:
+```ruby
+CourseCopyService.new(1)
+```
+
+## Запуск сервисной функции в фоне:
+```ruby
 CourseCopyWorker.perform_async(1)
+```

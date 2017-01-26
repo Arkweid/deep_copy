@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Course.destroy_all
+
+def courses_data
+  res = []
+  res << {
+    title: 'RoR advanced'
+  }
+  res
+end
+
+def materials_data
+  course_id = Course.first.id
+
+  res = []
+  res << {
+    course_id: course_id,
+    description: 'lesson 1',
+    file: File.open("/home/arkweid/RailsProjects/deep_copy/public/lesson1.txt")
+  }
+  res << {
+    course_id: course_id,
+    description: 'lesson 2',
+    file: File.open("/home/arkweid/RailsProjects/deep_copy/public/lesson2.txt")
+  }
+  res << {
+    course_id: course_id,
+    description: 'lesson 3',
+    file: File.open("/home/arkweid/RailsProjects/deep_copy/public/lesson3.txt")
+  }  
+  res
+end
+
+Course.create(courses_data)
+Material.create(materials_data)
